@@ -6,10 +6,11 @@ var React = require('react'),
 var Main = (props) => {
     return (
         <div className="component" id="main" style={{border: '1px solid red'}}>
+            <Radio/>
             <Clock/>
             <Nav/>
             {props.children}
-            <Radio/>
+
         </div>
     )
 }

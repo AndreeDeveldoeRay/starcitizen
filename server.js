@@ -1,8 +1,8 @@
 var express = require('express'),
-    app     = express()
+    app     = express(),
+    port = process.env.PORT || 4000
 
 app.use(express.static('public'))
 
-app.listen(4000, function(){
-    console.log('Express server is up on port: 4000')
-})
+app.listen(port)
+console.log('Running with the wolves @ ' + port)

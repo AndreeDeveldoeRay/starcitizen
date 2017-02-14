@@ -31,8 +31,7 @@ var Clock = React.createClass({
                                                             padding: '0',
                                                             position: 'fixed',
                                                             top: '4',
-                                                            left: '0',
-                                                            width: '100%',
+                                                            right: '0',
                                                             textAlign: 'center',lineHeight: '20px',
                                                             height: '50px'
                                                         }}>
