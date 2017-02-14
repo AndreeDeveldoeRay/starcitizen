@@ -43,8 +43,8 @@ var Home  = React.createClass({
         return (
             <div className="component page" id="index" style={{border: '1px solid blue',background:'rgba(0,0,255,0.1)'}}>
                 <span>Home</span>
-                <Input onSearch={this.handleSearch}/>
-                {renderMessage()}
+                // <Input onSearch={this.handleSearch}/>
+                // {renderMessage()}
             </div>
         )
     }
