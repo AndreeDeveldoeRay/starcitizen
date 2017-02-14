@@ -5,7 +5,7 @@ var Clock = React.createClass({
     getInitialState: function () {
         var date = new Date()
         return {
-            time: date.toLocaleTimeString(this.getLang())
+            time: date.toLocaleTimeString(this.getLang(),{hour: '2-digit', minute:'2-digit'})
         }
     },
 
