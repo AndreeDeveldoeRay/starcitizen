@@ -17,12 +17,12 @@ var Clock = React.createClass({
     myTimer: function () {
         var date = new Date()
         this.setState({
-            time: date.toLocaleTimeString(this.getLang())
+            time: date.toLocaleTimeString(this.getLang(),{hour: '2-digit', minute:'2-digit'})
         })
     },
 
     componentWillMount: function () {
-        setInterval(()=>{ this.myTimer() }, 1000)
+        setInterval(()=>{ this.myTimer() }, 60000)
     },
 
     render: function () {
