@@ -15,6 +15,17 @@ radio = playlist
 # And finally the security
 radio = fallback(track_sensitive = false, [radio, security])
 
+def append_title(m) =
+  # Grab the current title
+  title = m["title"]
+
+  # Return a new title metadata
+  [("title","#{title} - www.station.com")]
+end
+
+# Apply map_metadata to s using append_title
+s = map_metadata(append_title, s)
+
  # Stream it out
 output.icecast(%mp3,
   host = "localhost", port = 8000,
