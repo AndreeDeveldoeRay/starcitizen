@@ -19,12 +19,13 @@ radio = fallback(track_sensitive = false, [radio, security])
 # a new metadata block is passed in
 # the stream.
 
+def apply_metadata(m) =
+  title = m["title"]
+  artist = m["artist"]
+  print("Now playing: #{title} by #{artist}")
+end
 
-
-# The 'display_artist' field is passed using annotate.
-pattern =
-  '$(if $(display_artist),"$(display_artist)","$(artist)")'
-rewrite_metadata([("artist",pattern)],radio)
+radio = on_metadata(apply_metadata,radio)
 
  # Stream it out
 output.icecast(%mp3, host = "localhost", port = 8000, password = "JI21ko87.", mount = "talks", icy_metadata = "true", radio)
