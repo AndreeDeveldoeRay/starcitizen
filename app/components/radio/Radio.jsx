@@ -24,7 +24,9 @@ var Radio = React.createClass({
             })
 
             var getTitle = function () {
-                RadioStream.getTitle(that.state.channel).then(function (title) {
+                RadioStream.getTitle(that.state.channel).then(function (data) {
+                    console.log("Listeners: " + data.listeners)
+                    var title = data.title
                     that.setState({
                         title: title
                     })

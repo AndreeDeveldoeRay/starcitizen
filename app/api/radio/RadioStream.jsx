@@ -17,7 +17,7 @@ var RadioStream = {
                 if(err){
                     reject('Api failure')
                 } else {
-                    resolve(json[mountpoint].title)
+                    resolve(json[mountpoint])
                 }
 
             })
