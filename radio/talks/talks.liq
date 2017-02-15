@@ -5,7 +5,7 @@ set("log.file.path","/var/log/liquidsoap/talks.log")
 set("log.stdout",true)
 
 # playlist
-playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
+playlist = playlist(reload_mode="watch","/home/develdoe/starcitizen/radio/talks/playlist.m3u")
 security = single("/home/develdoe/starcitizen/radio/offline.mp3")
 radio = playlist
 source = fallback(track_sensitive = false, [radio, security])
