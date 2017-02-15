@@ -4,7 +4,8 @@ set("log.file.path","/var/log/liquidsoap/talks.log")
 
 
 # playlist
-playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
+playlist = playlistsafe(mode="normal","/home/develdoe/starcitizen/radio/talks/playlist.m3u")
+
 
 # If something goes wrong, we'll play this
 security = single("/home/develdoe/starcitizen/radio/offline.mp3")
@@ -28,7 +29,7 @@ end
 radio = on_metadata(apply_metadata,radio)
 
 # Verbose logs
-set("log.level",4)
+set("log.stdout",true)
 
 
  # Stream it out
