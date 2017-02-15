@@ -1,8 +1,8 @@
-var express = require('express'),
-    app     = express(),
-    port = process.env.PORT || 4000
+const   EXPRESS = require('express'),
+        APP     = EXPRESS(),
+        PORT = process.env.PORT || 4000
 
-app.use(express.static('public'))
+APP.use(EXPRESS.static('public'))
 
-app.listen(port)
-console.log('Port: ' + port)
+APP.listen(PORT)
+console.log('Port: ' + PORT)
