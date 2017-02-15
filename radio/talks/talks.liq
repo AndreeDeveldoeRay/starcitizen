@@ -18,6 +18,7 @@ radio = fallback(track_sensitive = false, [radio, security])
 # This function is called when
 # a new metadata block is passed in
 # the stream.
+
 def apply_metadata(m) =
   title = m["title"]
   artist = m["artist"]
@@ -29,6 +30,5 @@ radio = on_metadata(apply_metadata,radio)
  # Stream it out
 output.icecast(%mp3,
   host = "localhost", port = 8000,
-  password = "JI21ko87.", mount = "talks",
-  icy_metadata="true",description="Star Citizen radio",
+  password = "JI21ko87.", mount = "talks"
   radio)
