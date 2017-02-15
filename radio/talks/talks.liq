@@ -23,5 +23,5 @@ output.icecast(%mp3(bitrate = 128),
     port = 8000,
     password = "JI21ko87.",
     mount = "talks",
-    s
+    source
 )
