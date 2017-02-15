@@ -5,4 +5,4 @@ var express = require('express'),
 app.use(express.static('public'))
 
 app.listen(port)
-console.log('Porti: ' + port)
+console.log('Port: ' + port)
