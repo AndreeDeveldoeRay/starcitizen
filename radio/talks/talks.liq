@@ -27,5 +27,10 @@ end
 
 radio = on_metadata(apply_metadata,radio)
 
+# The 'display_artist' field is passed using annotate.
+pattern =
+  '$(if $(display_artist),"$(display_artist)","$(artist)")'
+rewrite_metadata([("artist",pattern)],radio)
+
  # Stream it out
 output.icecast(%mp3, host = "localhost", port = 8000, password = "JI21ko87.", mount = "talks", icy_metadata = "true", radio)
