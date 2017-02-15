@@ -4,7 +4,7 @@ set("log.file.path","/var/log/liquidsoap/talks.log")
 
 
 # playlist
-playlist = playlist.safe(mode="normal","/home/develdoe/starcitizen/radio/talks/playlist.m3u")
+playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
 
 
 # If something goes wrong, we'll play this
