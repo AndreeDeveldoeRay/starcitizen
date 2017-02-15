@@ -19,13 +19,7 @@ radio = fallback(track_sensitive = false, [radio, security])
 # a new metadata block is passed in
 # the stream.
 
-def apply_metadata(m) =
-  title = m["title"]
-  artist = m["artist"]
-  print("Now playing: #{title} by #{artist}")
-end
 
-radio = on_metadata(apply_metadata,radio)
 
 # The 'display_artist' field is passed using annotate.
 pattern =
