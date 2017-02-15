@@ -20,13 +20,11 @@ radio = fallback(track_sensitive = false, [radio, security])
 # a new metadata block is passed in
 # the stream.
 
-def apply_metadata(m) =
-  title = m["title"]
-  artist = m["artist"]
-  print("Now playing: #{title} by #{artist}")
+def on_meta (meta)
+    print("ON_META")
+    list.iter(fun (i) -> print(fst(i)^": "^snd(i)), meta)
 end
-
-radio = on_metadata(apply_metadata,radio)
+input = on_metadata(on_meta, radio)
 
 # Verbose logs
 set("log.stdout",true)
