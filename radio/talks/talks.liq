@@ -6,9 +6,6 @@ set("log.file.path","/var/log/liquidsoap/talks.log")
 # playlist
 playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
 
-# Some jingles
-jingles = playlist("/home/develdoe/starcitizen/radio/jingles.m3u")
-
 # If something goes wrong, we'll play this
 security = single("/home/develdoe/starcitizen/radio/offline.mp3")
 
