@@ -9,7 +9,6 @@ playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
 # If something goes wrong, we'll play this
 security = single("/home/develdoe/starcitizen/radio/offline.mp3")
 
-
 # Start building the feed with music
 radio = playlist
 
