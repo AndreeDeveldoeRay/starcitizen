@@ -19,4 +19,5 @@ radio = fallback(track_sensitive = false, [radio, security])
 output.icecast(%mp3,
   host = "localhost", port = 8000,
   password = "JI21ko87.", mount = "talks",
+  icy_metadata="true",,description="Star Citizen radio",
   radio)
