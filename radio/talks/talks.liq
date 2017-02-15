@@ -28,7 +28,4 @@ end
 radio = on_metadata(apply_metadata,radio)
 
  # Stream it out
-output.icecast(%mp3,
-  host = "localhost", port = 8000,
-  password = "JI21ko87.", mount = "talks", icy_metadata = "true"
-  radio)
+output.icecast(%mp3, host = "localhost", port = 8000, password = "JI21ko87.", mount = "talks", icy_metadata = "true", radio)
