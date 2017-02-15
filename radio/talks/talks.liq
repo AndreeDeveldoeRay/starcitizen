@@ -24,7 +24,7 @@ def on_meta (meta)
     print("ON_META")
     list.iter(fun (i) -> print(fst(i)^": "^snd(i)), meta)
 end
-input = on_metadata(on_meta, radio)
+radio = on_metadata(on_meta, radio)
 
 # Verbose logs
 set("log.stdout",true)
