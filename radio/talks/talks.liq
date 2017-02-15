@@ -27,6 +27,9 @@ end
 
 radio = on_metadata(apply_metadata,radio)
 
+# Verbose logs
+set("log.level",4)
+
 
  # Stream it out
 output.icecast(%mp3, host = "localhost", port = 8000, password = "JI21ko87.", mount = "talks", radio)
