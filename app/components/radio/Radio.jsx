@@ -37,7 +37,7 @@ var Radio = React.createClass({
 
             getTitleId = window.setInterval(function(){
                 getTitle()
-            }, 10000);
+            }, 20000);
 
             that.setState({
                 getTitleId: getTitleId

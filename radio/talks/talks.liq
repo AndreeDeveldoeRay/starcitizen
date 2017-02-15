@@ -2,6 +2,8 @@
 # Log dir
 set("log.file.path","/var/log/liquidsoap/talks.log")
 
+# Verbose logs
+set("log.stdout",true)
 
 # playlist
 playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
@@ -20,15 +22,11 @@ radio = fallback(track_sensitive = false, [radio, security])
 # a new metadata block is passed in
 # the stream.
 
-def on_meta (meta)
-    print("ON_META")
-    list.iter(fun (i) -> print(fst(i)^": "^snd(i)), meta)
-end
-radio = on_metadata(on_meta, radio)
-
-# Verbose logs
-set("log.stdout",true)
-
 
  # Stream it out
-output.icecast(%mp3, host = "localhost", port = 8000, password = "JI21ko87.", mount = "talks", radio)
+output.icecast(%mp3(bitrate = 128),
+    host = "localhost",
+    port = 8000,
+    password = "JI21ko87.",
+    mount = "talks",
+    radio)
