@@ -24,6 +24,8 @@ def apply_metadata(m) =
   print("Now playing: #{title} by #{artist}")
 end
 
+radio = on_metadata(apply_metadata,radio)
+
  # Stream it out
 output.icecast(%mp3,
   host = "localhost", port = 8000,
