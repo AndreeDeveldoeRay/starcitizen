@@ -15,16 +15,14 @@ radio = playlist
 # And finally the security
 radio = fallback(track_sensitive = false, [radio, security])
 
-def append_title(m) =
-  # Grab the current title
+# This function is called when
+# a new metadata block is passed in
+# the stream.
+def apply_metadata(m) =
   title = m["title"]
-
-  # Return a new title metadata
-  [("title","#{title} - www.station.com")]
+  artist = m["artist"]
+  print("Now playing: #{title} by #{artist}")
 end
-
-# Apply map_metadata to s using append_title
-s = map_metadata(append_title, s)
 
  # Stream it out
 output.icecast(%mp3,
