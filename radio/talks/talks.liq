@@ -9,9 +9,6 @@ playlist = playlist("/home/develdoe/starcitizen/radio/talks/playlist.m3u")
 # Start building the feed with music
 radio = playlist
 
-# And finally the security
-radio = fallback(track_sensitive = false, [radio, security])
-
 # This function is called when
 # a new metadata block is passed in
 # the stream.
