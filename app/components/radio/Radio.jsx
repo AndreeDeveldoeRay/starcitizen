@@ -112,7 +112,7 @@ var Radio = React.createClass({
         return (
             <div className="component" id="radio" style={{ border: '1px solid green', background:'rgba(0,255,255,0.5)', height: '10%' }}>
                 {render()}
-                <button onClick={changeChannel}>showdown</button>
+                <button onClick={changeChannel}>talks</button>
                 <button onClick={changeChannel}>third</button>
                 <button onClick={changeChannel}>skiff</button>
                 <button onClick={changeChannel}>antilaz</button>
