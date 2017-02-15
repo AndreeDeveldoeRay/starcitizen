@@ -80,6 +80,8 @@ var Radio = React.createClass({
         var that = this
         var {audio, channel} = that.state
 
+        if (channel === '') { channel = 'talks'}
+
         audio.src = RadioStream.getStream(channel)
 
         audio.play()
@@ -104,9 +106,7 @@ var Radio = React.createClass({
         var {play, stop, changeChannel} = this
 
         function render () {
-            if (state === 'pause' && channel === '') {
-                return <button onClick={play} className="play" disabled>Play</button>
-            } else if (state === 'pause'  ) {
+            if (state === 'pause'  ) {
                 return <button onClick={play} className="play">Play</button>
             } else  {
                 return <button onClick={stop} className="play active">Stop</button>
@@ -117,14 +117,15 @@ var Radio = React.createClass({
             <div className="component" id="radio" style={{ border: '1px solid green', background:'rgba(0,255,255,0.5)', height: '10%' }}>
                 <div>
                     {render()}
-                    <span style={{fontSize:'10px'}}>{channel} : {title}</span>
+                    <span style={{fontSize:'12px'}}>Now playing: </span>
+                    <span style={{fontSize:'12px'}}>{title}</span>
                 </div>
                 <div>
-                    <button onClick={changeChannel}>talks</button>
-                    <button onClick={changeChannel}>pop</button>
-                    <button onClick={changeChannel}>combat</button>
-                    <button onClick={changeChannel}>racing</button>
-                    <button onClick={changeChannel}>lounge</button>
+                    <button onClick={changeChannel}>talks</button> |
+                    <button onClick={changeChannel}>pop</button> |
+                    <button onClick={changeChannel}>combat</button> |
+                    <button onClick={changeChannel}>racing</button> |
+                    <button onClick={changeChannel}>lounge</button> | 
 
                 </div>
             </div>
