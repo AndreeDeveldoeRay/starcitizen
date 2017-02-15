@@ -118,7 +118,7 @@ var Radio = React.createClass({
                 <button onClick={changeChannel}>antilaz</button>
                 <button onClick={changeChannel}>murray</button>
                 <button onClick={changeChannel}>drift</button>
-                <span styel={{fontSize:'10px'}}>{channel} : {title}</span>
+                <span style={{fontSize:'10px'}}>{channel} : {title}</span>
             </div>
         )
     }
