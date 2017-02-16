@@ -1,5 +1,5 @@
 var React = require('react'),
-    Nav = require('Nav'),
+    TopBar = require('TopBar'),
     Clock = require('Clock'),
     Radio = require('Radio')
 
@@ -8,9 +8,8 @@ var Main = (props) => {
         <div className="component" id="main" style={{border: '1px solid red'}}>
             <Radio/>
             <Clock/>
-            <Nav/>
+            <TopBar/>
             {props.children}
-
         </div>
     )
 }

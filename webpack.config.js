@@ -23,7 +23,7 @@ module.exports = {
         root: __dirname,
         alias: {
             Main:   'app/components/Main',
-            Nav:    'app/components/Nav',
+            TopBar:    'app/components/TopBar',
             Home:   'app/components/home/Home',
             Input:  'app/components/home/Input',
             Output: 'app/components/home/Output',

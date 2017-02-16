@@ -117,9 +117,9 @@ var Radio = React.createClass({
 
         function render () {
             if (state === 'pause'  ) {
-                return <button onClick={play} className="play">Play</button>
+                return <button onClick={play} className="play button">Play</button>
             } else  {
-                return <button onClick={stop} className="play active">Stop</button>
+                return <button onClick={stop} className="play active button">Stop</button>
             }
         }
 
@@ -127,15 +127,14 @@ var Radio = React.createClass({
             <div className="component" id="radio" style={{ border: '1px solid green', background:'rgba(0,255,255,0.5)', height: '10%' }}>
                 <div>
                     {render()}
-                    <span style={{fontSize:'12px'}}>Now playing: </span>
                     <span style={{fontSize:'12px'}}>{title}</span>
                 </div>
                 <div>
-                    <button onClick={changeChannel}>talks</button> |
-                    <button onClick={changeChannel}>pop</button> |
-                    <button onClick={changeChannel}>combat</button> |
-                    <button onClick={changeChannel}>racing</button> |
-                    <button onClick={changeChannel}>lounge</button> |
+                    <button onClick={changeChannel} className="button">talks</button>
+                    <button onClick={changeChannel} className="button">pop</button>
+                    <button onClick={changeChannel} className="button">combat</button>
+                    <button onClick={changeChannel} className="button">racing</button>
+                    <button onClick={changeChannel} className="button">lounge</button>
 
                 </div>
             </div>
