@@ -118,7 +118,7 @@ var Radio = React.createClass({
                         {render()}
                     </div>
                     <div className="columns large-11 medium-11 small-10" >
-                        <span style={{lineHeight: '72px',fontWeight:'200'}}>{title}</span>
+                        <span style={{lineHeight: '72px',fontWeight:'200', fontSize: '12px'}}>{title}</span>
                     </div>
                 </div>
             </div>
