@@ -3,7 +3,7 @@ var React = require('react')
 var Output = ({temp, location}) => {
     return (
         <div className="component" id="home-output" >
-            <span>It is {temp} in {location}</span>
+            <h4 className="text-center">It is {temp} in {location}</h4>
         </div>
     )
 }

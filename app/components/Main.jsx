@@ -1,12 +1,14 @@
-var React = require('react'),
+var React  = require('react'),
     TopBar = require('TopBar'),
-    Clock = require('Clock'),
-    Radio = require('Radio')
+    Logo   = require('Logo'),
+    Clock  = require('Clock'),
+    Radio  = require('Radio')
 
 var Main = (props) => {
     return (
         <div className="component" id="main">
             <Radio/>
+            <Logo/>
             <Clock/>
             <TopBar/>
             <div className="row">

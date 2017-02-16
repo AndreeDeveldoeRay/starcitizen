@@ -11,14 +11,9 @@ var TopBar  = React.createClass( {
             <div className="top-bar" id="top-bar">
                 <div className="top-bar-left">
                     <ul className="menu">
-                        <li className="menu-text">Star Citizen</li>
-                        <li>
-                            <ul className="menu">
-                                <li><IndexLink activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/">Home</IndexLink></li>
-                                <li><Link activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/about">About</Link></li>
-                                <li><Link activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/grids">Grids</Link></li>
-                            </ul>
-                        </li>
+                        <li><IndexLink activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/">Home</IndexLink></li>
+                        <li><Link activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/about">About</Link></li>
+                        <li><Link activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/schedule">Schedule</Link></li>
                     </ul>
                 </div>
                 <div className="top-bar-right">

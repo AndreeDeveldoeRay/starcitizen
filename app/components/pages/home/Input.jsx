@@ -16,7 +16,7 @@ var Input = React.createClass({
             <div className="component" id="home-input">
                 <form onSubmit={this.onFormSubmit}>
                     <input type="text" ref="location"/>
-                    <button>Get Input</button>
+                    <button className="button expanded hollow">Get Input</button>
                 </form>
             </div>
         )

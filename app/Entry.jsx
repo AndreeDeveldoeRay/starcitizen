@@ -3,7 +3,7 @@ var React    = require('react'),
     Main     = require('Main'),
     Home     = require('Home'),
     About    = require('About'),
-    Grids    = require('Grids'),
+    Schedule    = require('Schedule'),
     {Route, Router, IndexRoute, hashHistory} = require('react-router')
 
 // Load foundation
@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route path="/" component={Main}>
             <IndexRoute component={Home}/>
             <Route path="about" component={About}/>
-            <Route path="grids" component={Grids}/>
+            <Route path="schedule" component={Schedule}/>
         </Route>
     </Router>,
     document.getElementById('app')

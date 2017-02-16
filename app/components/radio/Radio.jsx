@@ -7,13 +7,11 @@ var Radio = React.createClass({
         return {
             audio: new Audio(),
             state: 'pause',
-            channel: '',
-            title: '',
             getTitleId: 0
         }
     },
 
-    componentDidMount: function (e) {
+    componentWillMount: function (e) {
         var that = this
 
         this.state.audio.addEventListener('playing', function(e) {
@@ -49,27 +47,24 @@ var Radio = React.createClass({
         this.state.audio.addEventListener('loadstart', function(e) {
             var {getTitleId} = that.state
 
-            if(getTitleId){
-                clearInterval(getTitleId);
-            }
+            if (getTitleId) { clearInterval(getTitleId) }
 
             that.setState({
-                title: 'buffering...'
+                title: 'buffering...',
+                state: 'loadstart'
             })
         }, false)
 
         this.state.audio.addEventListener('pause', function(e) {
             var {getTitleId} = that.state
 
-            if(getTitleId){
-                clearInterval(getTitleId);
-            }
+            if (getTitleId) { clearInterval(getTitleId) }
 
             that.setState({
                 state: 'pause',
                 getTitleId: 0,
-                title: '',
-                channel: ''
+                title: undefined,
+                channel: undefined
             })
         }, false)
 
@@ -82,7 +77,7 @@ var Radio = React.createClass({
 
         var {audio, channel} = that.state
 
-        if (channel === '') {
+        if (channel === undefined) {
             that.setState({
                 channel: 'talks'
             }, function afterChannelChange(){
@@ -116,26 +111,31 @@ var Radio = React.createClass({
         var {play, stop, changeChannel} = this
 
         function render () {
-            if (state === 'pause'  ) {
-                return <button onClick={play} className="play button">Play</button>
+            if (state === 'pause' && channel === undefined) {
+                return <button onClick={play} className="play button tiny" disabled>Play</button>
+            } else if (state === 'pause'  ) {
+                return <button onClick={play} className="play button tiny" >Play</button>
             } else  {
-                return <button onClick={stop} className="play active button">Stop</button>
+                return <button onClick={stop} className="play active button tiny">Stop</button>
             }
         }
 
         return (
-            <div className="component" id="radio" style={{ border: '1px solid green', background:'rgba(0,255,255,0.5)', height: '10%' }}>
-                <div>
-                    {render()}
-                    <span style={{fontSize:'12px'}}>{title}</span>
-                </div>
-                <div>
-                    <button onClick={changeChannel} className="button">talks</button>
-                    <button onClick={changeChannel} className="button">pop</button>
-                    <button onClick={changeChannel} className="button">combat</button>
-                    <button onClick={changeChannel} className="button">racing</button>
-                    <button onClick={changeChannel} className="button">lounge</button>
-
+            <div id="radio" style={{background:'#252525', color: 'white'}}>
+                <div className="row">
+                    <div className="columns large-1 medium-6 small-1">
+                        {render()}
+                    </div>
+                    <div className="columns large-8 medium-6 small-2">
+                        <span style={{fontSize:'12px'}}>{title}</span>
+                    </div>
+                    <div className="columns large-3 medium-6 small-9">
+                        <button onClick={changeChannel} className="button tiny ">talks</button>
+                        <button onClick={changeChannel} className="button tiny ">pop</button>
+                        <button onClick={changeChannel} className="button tiny ">combat</button>
+                        <button onClick={changeChannel} className="button tiny ">racing</button>
+                        <button onClick={changeChannel} className="button tiny ">lounge</button>
+                    </div>
                 </div>
             </div>
         )
