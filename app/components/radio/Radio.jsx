@@ -7,7 +7,9 @@ var Radio = React.createClass({
         return {
             audio: new Audio(),
             state: 'pause',
-            getTitleId: 0
+            channel: 'talks',
+            getTitleId: 0,
+            title: undefined
         }
     },
 
@@ -62,9 +64,7 @@ var Radio = React.createClass({
 
             that.setState({
                 state: 'pause',
-                getTitleId: 0,
-                title: undefined,
-                channel: undefined
+                getTitleId: 0
             })
         }, false)
 
@@ -74,18 +74,7 @@ var Radio = React.createClass({
 
         var that = this
 
-
         var {audio, channel} = that.state
-
-        if (channel === undefined) {
-            that.setState({
-                channel: 'talks'
-            }, function afterChannelChange(){
-                audio.src = RadioStream.getStream(channel)
-            })
-        } else {
-            audio.src = RadioStream.getStream(channel)
-        }
 
         audio.src = RadioStream.getStream(channel)
 
@@ -111,30 +100,25 @@ var Radio = React.createClass({
         var {play, stop, changeChannel} = this
 
         function render () {
-            if (state === 'pause' && channel === undefined) {
-                return <button onClick={play} className="play button tiny" disabled>Play</button>
-            } else if (state === 'pause'  ) {
-                return <button onClick={play} className="play button tiny" >Play</button>
+            if (state === 'pause') {
+                return (
+                    <div style={{display: 'table-cell',verticalAlign: 'middle'}}>
+                        <button onClick={play} className="play button tiny" style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%',opacity: '1'}}>Play</button>
+                    </div>
+                )
             } else  {
-                return <button onClick={stop} className="play active button tiny">Stop</button>
+                return <button onClick={stop} style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">Stop</button>
             }
         }
 
         return (
-            <div id="radio" style={{background:'#252525', color: 'white'}}>
-                <div className="row">
-                    <div className="columns large-1 medium-6 small-1">
+            <div id="radio" style={{background:'#252525', color: 'white', height: '72px'}}>
+                <div className="row" >
+                    <div className="columns large-1 medium-1 small-2" style={{height: '72px'}}>
                         {render()}
                     </div>
-                    <div className="columns large-8 medium-6 small-2">
-                        <span style={{fontSize:'12px'}}>{title}</span>
-                    </div>
-                    <div className="columns large-3 medium-6 small-9">
-                        <button onClick={changeChannel} className="button tiny ">talks</button>
-                        <button onClick={changeChannel} className="button tiny ">pop</button>
-                        <button onClick={changeChannel} className="button tiny ">combat</button>
-                        <button onClick={changeChannel} className="button tiny ">racing</button>
-                        <button onClick={changeChannel} className="button tiny ">lounge</button>
+                    <div className="columns large-11 medium-11 small-10" >
+                        <span style={{lineHeight: '72px',fontWeight:'200'}}>{title}</span>
                     </div>
                 </div>
             </div>
