@@ -5,11 +5,15 @@ var React = require('react'),
 
 var Main = (props) => {
     return (
-        <div className="component" id="main" style={{border: '1px solid red'}}>
+        <div className="component" id="main">
             <Radio/>
             <Clock/>
             <TopBar/>
-            {props.children}
+            <div className="row">
+                <div className="columns medium-6 large-4 small-centered">
+                    {props.children}
+                </div>
+            </div>
         </div>
     )
 }

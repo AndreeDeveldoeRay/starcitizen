@@ -23,11 +23,12 @@ module.exports = {
         root: __dirname,
         alias: {
             Main:   'app/components/Main',
-            TopBar:    'app/components/TopBar',
+            TopBar: 'app/components/TopBar',
             Home:   'app/components/home/Home',
             Input:  'app/components/home/Input',
             Output: 'app/components/home/Output',
             About:  'app/components/about/About',
+            Grids:   'app/components/grids/Grids',
             Clock:  'app/components/clock/Clock',
             Radio:  'app/components/radio/Radio',
             RadioStream: 'app/api/radio/RadioStream',
