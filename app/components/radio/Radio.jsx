@@ -78,9 +78,19 @@ var Radio = React.createClass({
     play: function () {
 
         var that = this
+
+
         var {audio, channel} = that.state
 
-        if (channel === '') { channel = 'talks'}
+        if (channel === '') {
+            that.setState({
+                channel: 'talks'
+            }, function afterChannelChange(){
+                audio.src = RadioStream.getStream(channel)
+            })
+        } else {
+            audio.src = RadioStream.getStream(channel)
+        }
 
         audio.src = RadioStream.getStream(channel)
 
@@ -125,7 +135,7 @@ var Radio = React.createClass({
                     <button onClick={changeChannel}>pop</button> |
                     <button onClick={changeChannel}>combat</button> |
                     <button onClick={changeChannel}>racing</button> |
-                    <button onClick={changeChannel}>lounge</button> | 
+                    <button onClick={changeChannel}>lounge</button> |
 
                 </div>
             </div>
