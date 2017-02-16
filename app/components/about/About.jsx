@@ -2,7 +2,7 @@ var React = require('react')
 
 var About = (props) => {
     return (
-        <div className="component page" id="about" style={{border: '1px solid blue',background:'rgba(0,0,255,0.1)'}}>
+        <div id="about">
             <span>About</span>
         </div>
     )
