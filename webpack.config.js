@@ -35,7 +35,7 @@ module.exports = {
             Radio:             'app/components/radio/Radio',
             RadioStream:       'app/api/radio/RadioStream',
             Api:               'app/api/Api',
-            applicationStyles: 'app/styles/app.css'
+            styles: 'app/styles/app.scss'
         },
         extensions: ['','.js','.jsx']
     },

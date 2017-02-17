@@ -102,15 +102,23 @@ var Radio = React.createClass({
         function render () {
             if (state === 'pause') {
                 return (<div>
-                        <button onClick={play} className="play button tiny" style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%',opacity: '1'}}>Play</button>
+                        <button onClick={play} className="play button tiny" style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%',opacity: '1'}}>
+                            <div id="play"></div>
+                        </button>
                 </div>)
             } else if(state === 'loadstart') {
                 return (<div>
-                    <button onClick={stop} style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">Stop</button>
+                    <button onClick={stop} style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">
+                        <div id="pause"></div>
+
+                    </button>
                 </div>)
             } else {
                 return (<div>
-                    <button onClick={stop} style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">Stop</button>
+                    <button onClick={stop} style={{transform: 'rotate(180deg)',margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">
+                        <div id="pause"><div id="spectrum"></div></div>
+
+                    </button>
                 </div>)
             }
         }
@@ -129,11 +137,9 @@ var Radio = React.createClass({
                     <div className="columns large-1 medium-1 small-2" >
                         {render()}
                     </div>
-                    <div className="columns large-1 medium-1 small-2"  >
-                        {spectrum()}
-                    </div>
-                    <div className="columns large-10 medium-10 small-9" >
-                        <span style={{lineHeight: '72px',fontWeight:'200', fontSize: '12px'}}>{title}</span>
+                    <div className="columns large-11 medium-11 small-10"  >
+                        <div style={{ fontSize: '15px',fontWeight: 'bold', paddingTop: '15px'}}>Star Waves</div>
+                        <div style={{ fontSize: '13px'}}>{title}</div>
                     </div>
                 </div>
             </div>
