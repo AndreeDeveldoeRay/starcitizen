@@ -118,7 +118,7 @@ var Radio = React.createClass({
         function spectrum() {
             if (state === 'playing') {
                 return (<div>
-                    <img  style={{height: '42px', marginTop: '12px'}} src="/img/spectrum.gif"/>
+                    <img  style={{height: '72px',width: '100%'}} src="/img/giphy1.gif"/>
                 </div>)
             }
         }
