@@ -10,6 +10,8 @@ var React    = require('react'),
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation()
 
+//app css
+require('style!css!applicationStyles')
 
 
 ReactDOM.render(

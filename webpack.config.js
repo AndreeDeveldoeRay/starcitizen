@@ -22,19 +22,20 @@ module.exports = {
     resolve: {
         root: __dirname,
         alias: {
-            Main:        'app/components/Main',
-            TopBar:      'app/components/TopBar',
-            Logo:        'app/components/Logo',
-            Home:        'app/components/pages/home/Home',
-            ModalError:  'app/components/modals/Error',
-            Input:       'app/components/pages/home/Input',
-            Output:      'app/components/pages/home/Output',
-            About:       'app/components/pages/about/About',
-            Schedule:    'app/components/pages/schedule/Schedule',
-            Clock:       'app/components/clock/Clock',
-            Radio:       'app/components/radio/Radio',
-            RadioStream: 'app/api/radio/RadioStream',
-            Api:         'app/api/Api'
+            Main:              'app/components/Main',
+            TopBar:            'app/components/TopBar',
+            Logo:              'app/components/Logo',
+            Home:              'app/components/pages/home/Home',
+            ModalError:        'app/components/modals/Error',
+            Input:             'app/components/pages/home/Input',
+            Output:            'app/components/pages/home/Output',
+            About:             'app/components/pages/about/About',
+            Schedule:          'app/components/pages/schedule/Schedule',
+            Clock:             'app/components/clock/Clock',
+            Radio:             'app/components/radio/Radio',
+            RadioStream:       'app/api/radio/RadioStream',
+            Api:               'app/api/Api',
+            applicationStyles: 'app/styles/app.css'
         },
         extensions: ['','.js','.jsx']
     },

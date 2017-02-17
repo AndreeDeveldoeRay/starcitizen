@@ -52,7 +52,7 @@ var Home  = React.createClass({
 
         return (
             <div id="home">
-                <h2 className="text-center">Get Weather</h2>
+                <h2 className="text-center page-title">Get Weather</h2>
                 <Input onSearch={this.handleSearch}/>
                 {renderMessage()}
                 {renderError()}

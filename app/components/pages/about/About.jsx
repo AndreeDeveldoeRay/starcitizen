@@ -3,7 +3,7 @@ var React = require('react')
 var About = (props) => {
     return (
         <div id="about" >
-            <h2>About</h2>
+            <h2 className="text-center page-title">About</h2>
             <p>
                 As you might see, this site is in no means finished.
             </p>

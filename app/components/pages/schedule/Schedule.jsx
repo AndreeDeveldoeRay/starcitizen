@@ -4,7 +4,7 @@ var React = require('react'),
 var Schedule = (props) => {
     return (
         <div id="schedule">
-            <h2>The Pipeline</h2>
+            <h2 className="text-center page-title">The Pipeline</h2>
             <p>Here you can get an overview of what's done, what I am implementing, and whats in the pipeline. </p>
             <h4>v 1</h4>
             <ul>
