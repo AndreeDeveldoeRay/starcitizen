@@ -134,10 +134,10 @@ var Radio = React.createClass({
         return (
             <div id="radio" style={{background:'#252525', color: 'white', height: '72px'}}>
                 <div className="row" >
-                    <div className="columns large-1 medium-1 small-2" >
+                    <div className="columns large-1 medium-1 small-3" >
                         {render()}
                     </div>
-                    <div className="columns large-11 medium-11 small-10"  >
+                    <div className="columns large-11 medium-11 small-9"  >
                         <div style={{ fontSize: '15px',fontWeight: 'bold', paddingTop: '15px'}}>Star Waves</div>
                         <div style={{ fontSize: '13px'}}>{title}</div>
                     </div>
