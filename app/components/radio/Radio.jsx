@@ -71,7 +71,7 @@ var Radio = React.createClass({
     },
 
     play: function () {
-
+        
         var that = this
 
         var {audio, channel} = that.state
@@ -83,6 +83,7 @@ var Radio = React.createClass({
     },
 
     stop: function () {
+
         this.state.audio.pause()
     },
 
@@ -102,31 +103,21 @@ var Radio = React.createClass({
         function render () {
             if (state === 'pause') {
                 return (<div>
-                        <button onClick={play} className="play button tiny" style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%',opacity: '1'}}>
-                            <div id="play"></div>
+                        <button onClick={play} className="play button tiny " style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}}>
+                            <div id="play" className="toggle" ></div>
                         </button>
                 </div>)
             } else if(state === 'loadstart') {
                 return (<div>
-                    <button onClick={stop} style={{margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">
-                        <div id="pause"></div>
-
+                    <button onClick={stop} style={{transform: 'rotate(180deg)',margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny ">
+                        <div id="pause" className="toggle"></div>
                     </button>
                 </div>)
             } else {
                 return (<div>
                     <button onClick={stop} style={{transform: 'rotate(180deg)',margin: '10px',width: '52px',height: '52px',borderRadius:'100%'}} className="play active button tiny">
-                        <div id="pause"><div id="spectrum"></div></div>
-
+                        <div id="pause" ><div id="spectrum"></div></div>
                     </button>
-                </div>)
-            }
-        }
-
-        function spectrum() {
-            if (state === 'playing') {
-                return (<div>
-                    <img  style={{height: '72px',width: '100%'}} src="/img/giphy1.gif"/>
                 </div>)
             }
         }
@@ -134,10 +125,10 @@ var Radio = React.createClass({
         return (
             <div id="radio" style={{background:'#252525', color: 'white', height: '72px'}}>
                 <div className="row" >
-                    <div className="columns large-1 medium-1 small-3" >
-                        {render()}
-                    </div>
-                    <div className="columns large-11 medium-11 small-9"  >
+                    <div className="columns large-10 medium-centered"  >
+                        <div style={{float: 'left'}}>
+                            {render()}
+                        </div>
                         <div style={{ fontSize: '15px',fontWeight: 'bold', paddingTop: '15px'}}>Star Waves</div>
                         <div style={{ fontSize: '13px'}}>{title}</div>
                     </div>
