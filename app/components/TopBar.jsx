@@ -4,7 +4,14 @@ var React = require('react'),
 var TopBar  = React.createClass( {
     onSearch: function (e) {
         e.preventDefault()
-        console.log(e)
+
+        var location = this.refs.inputSearch.value,
+            encodLoc = encodeURIComponent(location)
+
+        if (location.length > 0) {
+            this.refs.inputSearch.value = ""
+            window.location.hash = `#/?location=${location}`
+        }
     },
     render: function () {
         return (<div>
@@ -19,7 +26,7 @@ var TopBar  = React.createClass( {
                 <div className="top-bar-right">
                     <form onSubmit={this.onSearch}>
                     <ul className="menu">
-                        <li><input type="search" placeholder="Search weather by city"/></li>
+                        <li><input type="search" ref="inputSearch" placeholder="Search weather by city"/></li>
                         <li><button type="button" className="button">Search</button></li>
                     </ul>
                     </form>

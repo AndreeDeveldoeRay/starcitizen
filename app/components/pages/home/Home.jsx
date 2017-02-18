@@ -15,7 +15,9 @@ var Home  = React.createClass({
 
         that.setState({
             isLoading: true,
-            errorMessage: undefined
+            errorMessage: undefined,
+            location: undefined,
+            temp: undefined
         })
 
         Api.getTemp(location).then(function (temp) {
@@ -30,6 +32,22 @@ var Home  = React.createClass({
                 errorMessage: e.message
             })
         })
+    },
+    componentDidMount: function () {
+        var location = this.props.location.query.location
+
+        if (location && location.length > 0) {
+            this.handleSearch(location)
+            window.location.hash = '#/'
+        }
+    },
+    componentWillReceiveProps: function (newProps) {
+        var location = newProps.location.query.location
+
+        if (location && location.length > 0) {
+            this.handleSearch(location)
+            window.location.hash = '#/'
+        }
     },
     render: function () {
         var {isLoading, temp, location, errorMessage} = this.state
