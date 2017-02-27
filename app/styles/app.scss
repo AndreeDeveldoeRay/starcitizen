@@ -1,18 +1,38 @@
-$space-large: 2.5rem;
-$font-color: #252525;
+// @Author: Andreee "DevelDoe" Ray <andreeray>
+// @Date:   2017-02-17T13:04:02+01:00
+// @Email:  me@andreeray.se
+// @Filename: app.scss
+// @Last modified by:   andreeray
+// @Last modified time: 2017-02-22T23:11:20+01:00
+
+@import 'base/variables';
+@import 'components/top-bar';
+
+body{
+    font-weight: 300;
+    font-size: $font-size;
+}
 
 *:focus {
     outline: none;
 }
 
-.page-title {
-    color: $font-color;
-    margin-top: $space-large;
-    margin-bottom: $space-large;
+p{
+    color: $black;
 }
 
-p{
-    color: $font-color;
+a {
+    color: #fff;
+    font-weight: 400;
+}
+a:hover{
+    color:#9cdbf5;
+}
+
+.page-title {
+    color: $black;
+    margin-top: $space-large;
+    margin-bottom: $space-large;
 }
 
 input[type=search] {

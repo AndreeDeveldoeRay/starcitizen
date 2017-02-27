@@ -1,3 +1,14 @@
+/**
+* @Author: Andreee "DevelDoe" Ray <andreeray>
+* @Date:   2017-02-11T00:44:15+01:00
+* @Email:  me@andreeray.se
+* @Filename: webpack.config.js
+* @Last modified by:   andreeray
+* @Last modified time: 2017-02-22T22:29:42+01:00
+*/
+
+
+
 var webpack = require('webpack')
 
 module.exports = {
@@ -35,7 +46,7 @@ module.exports = {
             Radio:             'app/components/radio/Radio',
             RadioStream:       'app/api/radio/RadioStream',
             Api:               'app/api/Api',
-            styles: 'app/styles/app.scss'
+            styles:            'app/styles/app.scss'
         },
         extensions: ['','.js','.jsx']
     },

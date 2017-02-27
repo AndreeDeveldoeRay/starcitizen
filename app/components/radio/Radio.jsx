@@ -1,3 +1,12 @@
+/**
+* @Author: Andreee "DevelDoe" Ray <andreeray>
+* @Date:   2017-02-11T03:35:41+01:00
+* @Email:  me@andreeray.se
+* @Filename: Radio.jsx
+* @Last modified by:   andreeray
+* @Last modified time: 2017-02-22T22:42:03+01:00
+*/
+
 var React       = require('react'),
     RadioStream = require('RadioStream')
 
@@ -71,7 +80,7 @@ var Radio = React.createClass({
     },
 
     play: function () {
-        
+
         var that = this
 
         var {audio, channel} = that.state
@@ -129,8 +138,8 @@ var Radio = React.createClass({
                         <div style={{float: 'left'}}>
                             {render()}
                         </div>
-                        <div style={{ fontSize: '15px',fontWeight: 'bold', paddingTop: '15px'}}>Star Waves</div>
-                        <div style={{ fontSize: '13px'}}>{title}</div>
+                        <div className="radio-station-title">Star Waves</div>
+                        <div className="radio-stream-title">{title}</div>
                     </div>
                 </div>
             </div>
