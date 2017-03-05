@@ -1,30 +1,41 @@
+/**
+* @Author: Andreee Ray <DevelDoe>
+* @Date:   2017-02-11T00:57:01+01:00
+* @Email:  me@andreeray.se
+* @Filename: Home.jsx
+* @Last modified by:   DevelDoe
+* @Last modified time: 2017-03-05T15:05:27+01:00
+*/
+
+
+
 var React = require('react'),
-    Input = require('Input'),
-    Output = require('Output'),
-    Api = require('Api'),
+    WeatherAPI = require('WeatherAPI'),
+    LocationAPI = require('LocationAPI'),
     ModalError = require('ModalError')
 
-var Home  = React.createClass({
+var Temp  = React.createClass({
     getInitialState: function () {
         return{
             isLoading: false
         }
     },
-    handleSearch: function (location) {
+    componentDidMount: function () {
         var that = this
 
-        that.setState({
-            isLoading: true,
-            errorMessage: undefined,
-            location: undefined,
-            temp: undefined
-        })
 
-        Api.getTemp(location).then(function (temp) {
-            that.setState({
-                location: location,
-                temp: temp,
-                isLoading: false
+        LocationAPI.getLocation().then(function(location){
+            WeatherAPI.getTemp(location).then(function (temp) {
+                that.setState({
+                    location: location,
+                    temp: temp,
+                    isLoading: false
+                })
+            }, function (e) {
+                that.setState({
+                    isLoading: false,
+                    errorMessage: e.message
+                })
             })
         }, function (e) {
             that.setState({
@@ -32,14 +43,8 @@ var Home  = React.createClass({
                 errorMessage: e.message
             })
         })
-    },
-    componentDidMount: function () {
-        var location = this.props.location.query.location
 
-        if (location && location.length > 0) {
-            this.handleSearch(location)
-            window.location.hash = '#/'
-        }
+
     },
     componentWillReceiveProps: function (newProps) {
         var location = newProps.location.query.location
@@ -56,7 +61,11 @@ var Home  = React.createClass({
             if (isLoading) {
                 return <h3 className="text-center">Fetching weather...</h3>
             } else if (temp && location) {
-                return <Output temp={temp} location={location}/>
+                return (
+                    <div className="component" id="home-output" >
+                        <h4 className="text-center">It is {temp} in {location}</h4>
+                    </div>
+                )
             }
         }
 
@@ -70,8 +79,7 @@ var Home  = React.createClass({
 
         return (
             <div id="home">
-                <h2 className="text-center page-title">Get Weather</h2>
-                <Input onSearch={this.handleSearch}/>
+                <h2 className="text-center page-title">Temp</h2>
                 {renderMessage()}
                 {renderError()}
             </div>
@@ -79,4 +87,4 @@ var Home  = React.createClass({
     }
 })
 
-module.exports = Home
+module.exports = Temp

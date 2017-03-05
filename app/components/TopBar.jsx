@@ -3,8 +3,8 @@
 * @Date:   2017-02-11T00:48:34+01:00
 * @Email:  me@andreeray.se
 * @Filename: TopBar.jsx
-* @Last modified by:   andreeray
-* @Last modified time: 2017-02-22T23:16:38+01:00
+* @Last modified by:   DevelDoe
+* @Last modified time: 2017-03-04T14:03:29+01:00
 */
 
 
@@ -32,7 +32,7 @@ var TopBar  = React.createClass( {
                     <div className="columns large-10 medium-centered"  >
                         <div className="top-bar-left">
                             <ul className="menu" >
-                                <li><IndexLink activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/">Home</IndexLink></li>
+                                <li><IndexLink activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/">Temp</IndexLink></li>
                                 <li><Link activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/about">About</Link></li>
                                 <li><Link activeClassName="active" activeStyle={{fontWeight:'bold'}} to="/schedule">Schedule</Link></li>
                             </ul>

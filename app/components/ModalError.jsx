@@ -1,3 +1,14 @@
+/**
+* @Author: Andreee Ray <DevelDoe>
+* @Date:   2017-02-16T12:52:23+01:00
+* @Email:  me@andreeray.se
+* @Filename: ModalError.jsx
+* @Last modified by:   DevelDoe
+* @Last modified time: 2017-03-04T13:53:57+01:00
+*/
+
+
+
 var React          = require('react'),
     ReactDOM       = require('react-dom'),
     ReactDOMServer = require('react-dom/server')
